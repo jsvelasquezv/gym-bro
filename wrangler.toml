@@ -3,6 +3,12 @@ name = "gym-bro"
 compatibility_date = "2024-07-22"
 pages_build_output_dir = "./build/client"
 
+[[d1_databases]]
+binding = "DB"
+database_name = "gym-bro-prod"
+database_id = "29378b91-8184-4ec2-a9a9-fcac75f0f412"
+
+
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Pages Function, running it closer to your back-end infrastructure
 # rather than the end user may result in better performance.
@@ -61,7 +67,7 @@ pages_build_output_dir = "./build/client"
 
 ######## PREVIEW environment config ########
 
-[env.preview.vars]
+# [env.preview.vars]
 # API_KEY = "xyz789"
 
 
@@ -75,10 +81,6 @@ d1_databases = [
 ]
 
 ######## PRODUCTION environment config ########
-[env.production]
-d1_databases = [
-  { binding = "DB", database_name = "gym-bro-prod", database_id = "29378b91-8184-4ec2-a9a9-fcac75f0f412" },
-]
 
 # [env.production.vars]
 # API_KEY = "abc123"
