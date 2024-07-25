@@ -2,13 +2,12 @@ import type { MetaFunction, LoaderFunction } from '@remix-run/cloudflare';
 import { json } from '@remix-run/cloudflare';
 import { useLoaderData } from '@remix-run/react';
 
-export const loader: LoaderFunction = async ({ context, params }) => {
+export const loader: LoaderFunction = async ({ context }) => {
   const { env } = context.cloudflare;
   const { results } = await env.DB.prepare(
-    'SELECT * FROM products where id = ?1'
-  )
-    .bind(params.productId)
-    .all();
+    'SELECT "Hello from D1" AS result'
+  ).all();
+  console.log(results);
   return json(results);
 };
 
